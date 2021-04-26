@@ -10,7 +10,7 @@ function Hello({color, name, isSpecial }) {
 }
 
 Hello.defaultProps = {
-    name: '이름없음'
+    name: '이름 모름'
 }
 
 
