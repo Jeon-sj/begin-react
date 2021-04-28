@@ -1,21 +1,39 @@
 import React from 'react';
 
-function User({ user }) {
+const User = React.memo(function User({ user, onRemove, onToggle }) {
+    
     return (
         <div>
-            <b>{user.username}</b><span>{user.email}</span>
+            <b 
+            style = {{
+                cursor: 'pointer',
+                color: user.active ? 'green' : 'black'
+            }}
+            onClick={()=>onToggle(user.id)}
+            >
+                {user.username}
+                </b>
+                &nbsp;
+                <span>{user.email}</span>
+            <button onClick={() => onRemove(user.id)}>삭제</button>
         </div>
-    )
-}
+    );
+});
 
-function UserList({ users }) {    
+function UserList({ users, onRemove, onToggle }) {    
     return (
-        <div>    
+        <div>
+            {/*map함수를 사용하여 배열에 내용을 순차로 호출하여 수정  */}
             {users.map(user => (
-                <User user={user} key = {user.id} />
+                <User 
+                user={user} 
+                key = {user.id} 
+                onRemove={onRemove} 
+                onToggle={onToggle}
+                />
             ))}
         </div>
     );
 }
 
-export default UserList;
+export default React.memo(UserList);
