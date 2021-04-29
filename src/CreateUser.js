@@ -20,7 +20,6 @@ function CreateUser({ username, email, onChange, onCreate}) {
     );
 }
 
-
 const onCreate =()=> { 
     const user = {
       id: nextId.current,
@@ -36,6 +35,6 @@ const onChange = e => {
     });
   };
 
-const nextId = useRef(4)
+
 
 export default React.memo(CreateUser);
