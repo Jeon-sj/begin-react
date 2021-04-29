@@ -20,20 +20,20 @@ function CreateUser({ username, email, onChange, onCreate}) {
     );
 }
 
-const onCreate =()=> { 
-    const user = {
-      id: nextId.current,
-      username,
-      email
-    };
+// const onCreate =()=> { 
+//     const user = {
+//       id: nextId.current,
+//       username,
+//       email
+//     };
 
-const onChange = e => {
-    const {name, value} = e.target;
-    setInputs ({
-      ...inputs,
-      [name]: value
-    });
-  };
+// const onChange = e => {
+//     const {name, value} = e.target;
+//     setInputs ({
+//       ...inputs,
+//       [name]: value
+//     });
+//   };
 
 
 
